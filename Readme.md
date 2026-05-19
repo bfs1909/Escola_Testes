@@ -1,6 +1,6 @@
 ## Codigo para estudo de MySql
 
-## Banco de um Escola
+## Banco de dados de uma Escola
 Projeto criado para estudos de SQL e modelagem de dados 
 
 ## Tecnoligias 
