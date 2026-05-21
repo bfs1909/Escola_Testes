@@ -15,3 +15,14 @@ Projeto criado para estudos de SQL e modelagem de dados
 - matricula
 - cadastro de turma 
 - relacionamento entre as tabelas
+
+Segue um resumo:
+
+- SELECTSeleciona dados FROMde um banco de dados.
+- SELECT *Seleciona todas as colunas.
+- DISTINCTRetorna valores únicos em uma coluna.
+- WHEREFiltra os resultados com base em uma condição.
+- Operadores de comparação: =, !=, >, <, >=, <=.
+- LIKEO operador procura um padrão específico.
+- BETWEENO operador compara valores em um intervalo.
+- ORDER BYOrdena os dados (em ordem crescente/decrescente).
