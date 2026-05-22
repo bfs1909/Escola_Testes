@@ -1,3 +1,5 @@
+/* dados inseridos na tabela escola */
+
 INSERT INTO aluno (nome, data_nascimento, cpf, email, telefone)
 VALUES
 ('Ana Souza', '2005-03-12', '11111111111', 'ana@gmail.com', '11999990001'),
@@ -10,6 +12,8 @@ VALUES
 ('Rafael Gomes', '2005-04-10', '88888888888', 'rafael@gmail.com', '11999990008'),
 ('Juliana Silva', '2004-12-25', '99999999999', 'juliana@gmail.com', '11999990009'),
 ('Pedro Henrique', '2005-08-14', '10101010101', 'pedro@gmail.com', '11999990010');
+
+==========================================================================
 
 INSERT INTO professor (nome, especialidade, email, telefone)
 VALUES
@@ -24,6 +28,8 @@ VALUES
 ('Roberto Dias', 'Educação Física', 'roberto@gmail.com', '11988880009'),
 ('Vanessa Lima', 'Artes', 'vanessa@gmail.com', '11988880010');
 
+=====================================================================
+
 INSERT INTO materia (nome_materia, carga_horaria)
 VALUES
 ('Matemática', 80),
@@ -36,6 +42,8 @@ VALUES
 ('Inglês', 50),
 ('Educação Física', 40),
 ('Artes', 40);
+
+=========================================================
 
 INSERT INTO turma (nome_tuma, ano_letivo, id_professor)
 VALUES
@@ -50,6 +58,8 @@ VALUES
 ('3C', 2026, 9),
 ('4A', 2026, 10);
 
+==============================================================
+
 INSERT INTO matricula (data_matricula, id_aluno, id_turma)
 VALUES
 ('2026-01-10', 1, 1),
@@ -62,6 +72,8 @@ VALUES
 ('2026-01-13', 8, 6),
 ('2026-01-14', 9, 7),
 ('2026-01-14', 10, 8);
+
+==========================================================
 
 INSERT INTO professor_materia (id_professor, id_materia)
 VALUES
@@ -76,6 +88,8 @@ VALUES
 (9,9),
 (10,10);
 
+======================================================================
+
 INSERT INTO escola.base_salarial (salario_minimo, salario_maximo) 
 VALUES
 (2000, 2500),
@@ -86,6 +100,8 @@ VALUES
 (4501, 5000),
 (5001, 5500),
 (5501, 6000);
+
+=====================================================
 
 UPDATE escola.professor
 SET CPF = '12345678901', salario_professor = 3500
@@ -127,11 +143,115 @@ UPDATE escola.professor
 SET CPF = '01234567890', salario_professor = 5500
 WHERE id_professor = 10;
 
+======================================================
 
+UPDATE escola.aluno
+SET situacao = 'Aprovado'
+WHERE id_aluno = 1;
+
+UPDATE escola.aluno
+SET situacao = 'Aprovado'
+WHERE id_aluno = 2;
+
+UPDATE escola.aluno
+SET situacao = 'Recuperacao'
+WHERE id_aluno = 3;
+
+UPDATE escola.aluno
+SET situacao = 'Reprovado'
+WHERE id_aluno = 4;
+
+UPDATE escola.aluno
+SET situacao = 'Aprovado'
+WHERE id_aluno = 5;
+
+UPDATE escola.aluno
+SET situacao = 'Recuperacao'
+WHERE id_aluno = 6;
+
+UPDATE escola.aluno
+SET situacao = 'Aprovado'
+WHERE id_aluno = 7;
+
+UPDATE escola.aluno
+SET situacao = 'Reprovado'
+WHERE id_aluno = 8;
+
+UPDATE escola.aluno
+SET situacao = 'Aprovado'
+WHERE id_aluno = 9;
+
+UPDATE escola.aluno
+SET situacao = 'Recuperacao'
+WHERE id_aluno = 10;
+
+=================================================
+
+UPDATE escola.matricula
+SET faltas = 2
+WHERE id_matricula = 1;
+
+UPDATE escola.matricula
+SET faltas = 5
+WHERE id_matricula = 2;
+
+UPDATE escola.matricula
+SET faltas = 8
+WHERE id_matricula = 3;
+
+UPDATE escola.matricula
+SET faltas = 12
+WHERE id_matricula = 4;
+
+UPDATE escola.matricula
+SET faltas = 1
+WHERE id_matricula = 5;
+
+UPDATE escola.matricula
+SET faltas = 4
+WHERE id_matricula = 6;
+
+UPDATE escola.matricula
+SET faltas = 10
+WHERE id_matricula = 7;
+
+UPDATE escola.matricula
+SET faltas = 15
+WHERE id_matricula = 8;
+
+UPDATE escola.matricula
+SET faltas = 0
+WHERE id_matricula = 9;
+
+UPDATE escola.matricula
+SET faltas = 7
+WHERE id_matricula = 10;
+
+==================================================
+
+INSERT INTO escola.nota (
+    id_aluno,
+    id_materia,
+    nota,
+    data_avaliacao
+)
+VALUES
+(1, 2, 7.5, '2026-04-01'),
+(1, 3, 9.0, '2026-04-02'),
+(2, 2, 5.5, '2026-04-01'),
+(3, 1, 6.0, '2026-04-03'),
+(4, 4, 4.5, '2026-04-03'),
+(5, 5, 8.5, '2026-04-04'),
+(6, 6, 7.0, '2026-04-04'),
+(7, 7, 9.5, '2026-04-05'),
+(8, 8, 2.5, '2026-04-05'),
+(9, 1, 10.0, '2026-04-06');
+
+==================================================
 
 DESCRIBE escola.professor;
 
-SELECT * FROM escola.base_salarial;
+SELECT * FROM escola.nota;
 
 SELECT data_nascimento
 FROM aluno;
@@ -139,4 +259,6 @@ FROM aluno;
 /* modo de exibir a data de uma forma melhor */
 SELECT DATE_FORMAT(data_nascimento, '%d/%m/%Y')
 FROM aluno;
+
+desc escola.matricula;
 
